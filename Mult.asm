@@ -11,26 +11,61 @@
 
 // Put your code here.
 
-// Adds 1+...+100.
-@i // i refers to some mem. location.
-M=1 // i=1
-@sum // sum refers to some mem. location.
-M=0 // sum=0
+// Vamos a multiplicar 6*2.
+@0
+D=A
+@R2 
+M=D 
+@6
+D=A
+@R1 
+M=D
+
 (LOOP)
-@i
-D=M // D=i
-@100
-D=D-A // D=i-100
+@R1 
+D=M
 @END
-D;JGT // If (i-100)>0 goto END
-@i
-D=M // D=i
-@sum
-M=D+M // sum=sum+i
-@i
-M=M+1 // i=i+1
-@LOOP
-0;JMP // Goto LOOP
+D;JLE
+@RO
+D=D+M
+@R2
+M=D
+@END
+D;JLE
+@R1 
+D=D+M
+@R2
+M=D
+@END
+D;JGT
 (END)
 @END
-0;JMP // Infinite loop
+0;JMP
+
+
+
+
+
+//@R2
+//D=M 
+//@R1
+//D=D+M
+//@R2
+//M=D
+
+//D=M 
+//@R1
+//D=D+M
+//@R2
+//M=D
+
+//D=M 
+//@R1
+//D=D+M
+//@R2
+//M=D
+
+//(END)
+//@END
+//0;JMP
+
